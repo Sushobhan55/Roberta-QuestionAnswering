@@ -54,7 +54,7 @@ textarea {
 .submit {
   margin: 10;
   position: absolute;
-  top: 85%;
+  top: 83%;
   left: 51%;
 }
 
@@ -70,36 +70,31 @@ textarea {
 
 <div class="header">
   <h1>Grabanswer</h1>
-  <p>Got no time to read an entire text? Grab an answer!</p>
+  <p style="font-family:'Courier New'">Got no time to read an entire text? Grab an answer!</p>
 </div>
 
 <div class="topnav">
-  <a href="#">Grabanswer</a>
-  <a href="#">Contact</a>
-  <a href="#">About</a>
+  <a class="active" href="{{ url_for('main') }}">Grabanswer</a>
+  <a href="/contact/">Contact</a>
+  <a href="/about/">About</a>
 </div>
 
-<form>
+<form action="{{ url_for('main') }}" method="POST">
     <h2>Text</h2>
-    <textarea name="text" placeholder="text here..." rows=6></textarea>
-</form>
-
-<div class="question">
-<form>
+    <textarea name="text" placeholder="text here..." rows=6 required>{{text}}</textarea>
+    <div class="question">
     <h2>Question</h2>
-    <textarea name="question" placeholder="question here..."></textarea>
+    <textarea name="question" placeholder="question here..." required>{{question}}</textarea>
+    </div>
+    <div class="submit">
+        <input type="image" src="/static/logo.png" value="Submit" height=50px width=50px>
+    </div>
 </form>
-</div>
-
-<div class="submit">
-    <input type="submit" value="Submit" height=50px width=50px>
-</div>
-
 
 <div class="answer">
     <h2 align="center">Answer</h2>
     {% if answer %}
-    {{ answer }}
+    <p align="center"> {{ answer }} </p>
     {% endif %}
 </div>
 

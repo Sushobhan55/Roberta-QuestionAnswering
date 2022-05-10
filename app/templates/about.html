@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>GRABANSWER</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Grabanswer</h1>
+  <p style="font-family:'Courier New'">Got no time to read an entire text? Grab an answer!</p>
+</div>
+
+<div class="topnav">
+  <a class="active" href="{{ url_for('main') }}">Grabanswer</a>
+  <a href="/contact/">Contact</a>
+  <a href="/about/">About</a>
+</div>
+
+<center><img src="../static/logo.png" height="10%" width="10%"></center>
+<p align="center">Grabanswer is a web application that utilizes transformers library from Hugging Face.<br>
+  Hugging Face's transformers library provides APIs to easily download and train state-of-the-art pretrained models.<br>
+  You might have heard of GPT-n or BERT that are more popular transformer models. Transformers are good for NLP and image recognition.
+<p align="center">Grabanswer utilizes Tinyroberta, a distilled version of transformer model Roberta-Base. Roberta-Base is a<br>
+  question answering model. The distilled model has a comparable prediction quality and runs at twice the speed of the base model.
+<p align="center">In the web application, you enter a long text and ask a question whose answer is in the text. Then click on the<br>
+  Grabanswer's logo, it submits your text and question to the model and predicts the answer from the text.
+<p align="center">You can use Grabanswer to quickly grab answers from long texts, for example, to get answers to important questions<br>
+  from a handout or a chapter a night before an exam or to know final exam's date without having to go through entire syllabus.
+</p>
+
+</body>
+</html>

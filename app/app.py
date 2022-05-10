@@ -23,12 +23,18 @@ def main():
 	if request.method == "GET":
 		return render_template('index.html')
 	if request.method == "POST":
-		q = request.form['question']
-		t = request.form['text']
-		return render_template('index.html', answer=grabanswer(q,t))
-	else:
-		flash('Error Ocuured!')
-		return redirect(url_for('/'))
+		return render_template('index.html',
+							   text=request.form['text'],
+							   question=request.form['question'],
+							   answer=grabanswer(request.form['question'],request.form['text']))
+
+@app.route("/contact/")
+def contact():
+	return render_template("contact.html")
+
+@app.route("/about/")
+def about():
+	return render_template("about.html")
 
 if __name__ == "__main__":
 	app.run(debug=True)
