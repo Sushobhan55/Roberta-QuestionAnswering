@@ -51,13 +51,6 @@ textarea {
   margin-top: 6px;
 }
 
-.submit {
-  margin: 10;
-  position: absolute;
-  top: 83%;
-  left: 51%;
-}
-
 .answer {
   float: right;
   width: 44%;
@@ -82,13 +75,11 @@ textarea {
 <form action="{{ url_for('main') }}" method="POST">
     <h2>Text</h2>
     <textarea name="text" placeholder="text here..." rows=6 required>{{text}}</textarea>
-    <div class="question">
-    <h2>Question</h2>
-    <textarea name="question" placeholder="question here..." required>{{question}}</textarea>
-    </div>
-    <div class="submit">
-        <input type="image" src="/static/logo.png" value="Submit" height=50px width=50px>
-    </div>
+        <div class="question">
+            <h2>Question</h2>
+            <textarea name="question" placeholder="question here..." required>{{question}}</textarea>
+            <input type="submit" value="Grabanswer">
+        </div>
 </form>
 
 <div class="answer">
