@@ -14,4 +14,4 @@ Grabanswer, it submits your text and question to the model and predicts the answ
 
 You can use Grabanswer to quickly grab answers from long texts, for example, to get answers to important questions
 from a handout or a chapter a night before an exam or to know final exam's date without having to go through entire syllabus; in general,
-to answer questions without reading the text. That may save you time. 
+to answer questions without reading the text. That may save you time!
